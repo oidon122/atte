@@ -1,0 +1,28 @@
+.header {
+  background: #FFF;
+}
+
+.header__inner {
+  margin: 0 auto;
+  padding: 10px 50px;
+  max-width: 1230px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  color: #000;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.login-form {
+  text-align: center;
+}
+
+
+.footer {
+  margin: 10px auto;
+  text-align-last: center;
+  background-color: #FFF;
+}
