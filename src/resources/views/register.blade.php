@@ -20,18 +20,31 @@
       <h2 class="register-form__heading">会員登録</h2>
     </div>
     <div class="register-form__inner">
-      <form action="" method="post">
+      <form class="register" action="/register" method="post">
+        @csrf
         <div class="register-form__name">
-          <input class="register-form__name-input" type="text" placeholder="名前">
-          <p class="register-form__error-message"></p>
+          <input class="register-form__name-input" type="text" name="name" placeholder="名前" value="{{ old('name') }}">
+          <div class="register-form__error">
+            @error('name')
+            {{ $message }}
+            @enderror
+          </div>
         </div>
         <div class="register-form__email">
-          <input class="register-form__email-input" type="email" placeholder="メールアドレス">
-          <p class="register-form__error-message"></p>
+          <input class="register-form__email-input" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
+          <div class="register-form__error">
+            @error('email')
+            {{ $message }}
+            @enderror
+          </div>
         </div>
         <div class="register-form__password">
-          <input class="register-form__password-input" type="text" placeholder="パスワード">
-          <p class="register-form__error-message"></p>
+          <input class="register-form__password-input" type="text" name="password" placeholder="パスワード" value="{{ old('password') }}">
+          <div class="register-form__error">
+            @error('password')
+            {{ $message }}
+            @enderror
+          </div>
         </div>
         <div class="register-form__password">
           <input class="register-form__password-input confirm" type="text" placeholder="確認用パスワード">

@@ -15,4 +15,5 @@ use App\Http\Controllers\RegisteredUserController;
 */
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/work', [AttendanceController::class, 'index']);
