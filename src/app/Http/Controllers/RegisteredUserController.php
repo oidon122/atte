@@ -10,13 +10,13 @@ class RegisteredUserController extends Controller
 {
     public function create()
     {
-        return view('register');
+        return view('auth/register');
     }
 
     public function store(UserRequest $request)
     {
         $user = $request->only(['name', 'email', 'password']);
         User::create($user);
-        return view('login');
+        return view('auth/login');
     }
 }

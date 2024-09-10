@@ -21,14 +21,12 @@
   margin: 0 auto;
   padding: 20px;
   padding-bottom: 100px;
-}
-
-.register-form {
   text-align: center;
 }
 
 input {
   width: 300px;
+  margin-top: 20px;
   padding: 10px;
   border: 2px solid #909090;
   border-radius: 5px;
@@ -36,23 +34,30 @@ input {
   box-sizing: border-box;
 }
 
-.login-form__button {
+.form__error {
+  color: red;
+  font-size: 15px;
+  margin-top: 2px;
+}
+.form__button {
   background-color: #214BE0;
   color: #FFF;
   border: 2px solid #214BE0;
 }
 
-.register-form__inner {
-  text-align: center;
-}
-
 .user-login {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
+  color: #909090;
 }
 
 .user-login__message {
   margin-bottom: 0px;
+}
+
+.link {
+  text-decoration: none;
+  color: #214BE0;
 }
 
 .footer {

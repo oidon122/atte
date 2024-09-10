@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atte</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}" />
 </head>
 <body>
   <header>
@@ -16,15 +16,15 @@
     </div>
   </header>
   <main class="main">
-    <div class="login-form">
-      <h2 class="login-form__heading">ログイン</h2>
+    <div class="form">
+      <h2 class="form__heading">ログイン</h2>
     </div>
-    <div class="login-form__inner">
+    <div class="form__inner">
       <form action="" method="post">
-        <input class="login-form__input" type="email" placeholder="メールアドレス">
-        <p class="login-form__error-message"></p>
-        <input class="login-form__input" type="text" placeholder="パスワード">
-        <p class="login-form__error-message"></p>
+        <input class="form__input" type="email" name="email" placeholder="メールアドレス">
+        <div class=form__error-message></div>
+        <input class="form__input" type="text" name="password" placeholder="パスワード">
+        <div class="form__error-message"></div>
         <input class="login-form__button" type="submit" value="ログイン">
       </form>
     </div>

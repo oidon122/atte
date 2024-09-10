@@ -27,6 +27,7 @@ class UserRequest extends FormRequest
             'name' => ['required', 'string', 'max:191'],
             'email' => ['required', 'string', 'email', 'unique:users,email', 'max:191'],
             'password' => ['required', 'min:8', 'max:191'],
+            'password_confirm' => ['required', 'same:password'],
         ];
     }
 
@@ -44,6 +45,7 @@ class UserRequest extends FormRequest
             'password.required' => 'パスワードを入力してください',
             'password.min' => 'パスワードを8文字以上で入力してください',
             'password.max' => 'パスワードを191文字以下で入力してください',
+            'password_confirm.same' => 'パスワードが一致しません'
         ];
     }
 }
