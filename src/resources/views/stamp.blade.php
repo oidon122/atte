@@ -12,13 +12,20 @@
     <div class="header">
       <div class="header__inner">
         <div class="header__logo">Atte</div>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">ホーム</li>
-            <li class="header__nav-item">日付一覧</li>
-            <li class="header__nav-item">ログアウト</li>
-          </ul>
-        </nav>
+        <ul class="header__nav">
+          <li class="header__nav-item">
+            <a class="header-nav__link" href="/work">ホーム</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header-nav__link" href="/attendance">日付一覧</a>
+          </li>
+          <li class="header__nav-item">
+            <form action="/destroy" method="post">
+              @csrf
+              <button class="header-nav__button">ログアウト</button>
+            </form>
+          </li>
+        </ul>
       </div>
     </div>
   </header>

@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="form__password">
-        <input class="form__password-input" type="text" name="password" placeholder="パスワード" value="{{ old('password') }}">
+        <input class="form__password-input" type="password" name="password" placeholder="パスワード">
       </div>
       <div class="form__error">
           @error('password')
@@ -36,7 +36,7 @@
           @enderror
       </div>
       <div class="form__password-confirm">
-        <input class="form__password-input confirm" type="text" name="password_confirm" placeholder="確認用パスワード">
+        <input class="form__password-input confirm" type="password" name="password_confirm" placeholder="確認用パスワード">
         <div class="form__error">
           @error('password_confirm')
           {{ $message }}
