@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
-use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +14,6 @@ use App\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
-Route::post('/register', [RegisteredUserController::class, 'store']);
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
-
 Route::middleware('auth')->group(function () {
     Route::get('/work', [AttendanceController::class, 'index']);
-    Route::post('/login', [AuthenticatedSessionController::class, 'destroy']);
 });

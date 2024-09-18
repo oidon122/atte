@@ -9,7 +9,7 @@
     <h2 class="form__heading">ログイン</h2>
   </div>
   <div class="form__inner">
-    <form class="login" action="{{ route('login') }}" method="post">
+    <form class="login" action="/login" method="post">
       @csrf
       <div class="form__email">
         <input class="form__email-input" type="email" name="email" placeholder="メールアドレス" value="{{ old('email') }}">
