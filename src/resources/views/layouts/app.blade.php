@@ -33,7 +33,7 @@
     </div>
   </header>
   <div class="main">
-    @yield('main')
+    @yield('content')
   </div>
   <footer class="footer">
     <div class="footer__inner">

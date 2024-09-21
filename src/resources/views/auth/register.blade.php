@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}" />
 @endsection
 
-@section('main')
+@section('content')
   <div class="form">
     <h2 class="form__heading">会員登録</h2>
   </div>
@@ -50,4 +50,4 @@
     <p class="user-login__message">アカウントをお持ちの方はこちらから</p>
     <a class="link" href="/login">ログイン</a>
   </div>
-@endsection('main')
+@endsection('content')

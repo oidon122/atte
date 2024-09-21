@@ -14,6 +14,12 @@ use App\Http\Controllers\AttendanceController;
 |
 */
 
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
+
 Route::middleware('auth')->group(function () {
     Route::get('/work', [AttendanceController::class, 'index']);
+    
 });
