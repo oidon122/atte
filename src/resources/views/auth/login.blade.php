@@ -34,4 +34,4 @@
     <p class="user-register__message">アカウントをお持ちでない方はこちらから</p>
     <a class="link" href="/register">会員登録</a>
   </div>
-@endsection('content')
+@endsection

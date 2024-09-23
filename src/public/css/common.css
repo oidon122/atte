@@ -16,6 +16,15 @@
   font-size: 24px;
 }
 
+.header__nav {
+  display: inline-block;
+}
+
+.header__nav-item {
+  display: inline-block;
+  padding: 0 15px;
+}
+
 .footer {
   margin: 10px auto;
   text-align-last: center;

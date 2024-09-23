@@ -21,5 +21,9 @@ Route::post('/logout', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/work', [AttendanceController::class, 'index']);
-    
+    Route::post('/work/start', [AttendanceController::class,'startWork']);
+    Route::post('/work/end', [AttendanceController::class, 'endWork']);
+
+    Route::post('/rest/start', [AttendanceController::class, 'startRest']);
+    Route::post('/rest/end', [AttendanceController::class, 'endRest']);
 });

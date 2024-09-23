@@ -50,4 +50,4 @@
     <p class="user-login__message">アカウントをお持ちの方はこちらから</p>
     <a class="link" href="/login">ログイン</a>
   </div>
-@endsection('content')
+@endsection

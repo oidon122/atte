@@ -1,30 +1,3 @@
-.header {
-  background: #FFF;
-}
-
-.header__inner {
-  margin: 0 auto;
-  padding: 10px 50px;
-  max-width: 1230px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header__logo {
-  color: #000;
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.header__nav {
-  display: inline-block;
-}
-
-.header__nav-item {
-  display: inline-block;
-  padding: 0 15px;
-}
-
 .main {
   background-color: #F2F2F2;
   margin: 0 auto;
@@ -40,28 +13,28 @@
   text-align: center;
 }
 
-.work__button-item {
+.work__buttons-form{
   display: inline;
+}
+
+.work__button-item {
   height: 200px;
   width: 40%;
   margin: 10px;
   padding: 15px 15px;
   background-color: #FFF;
   border-color: #FFF;
+}
+
+.rest__buttons-form {
+  display: inline;
 }
 
 .rest__button-item {
-  display: inline;
   height: 200px;
   width: 40%;
   margin: 10px;
   padding: 15px 15px;
   background-color: #FFF;
   border-color: #FFF;
-}
-
-.footer {
-  margin: 10px auto;
-  text-align-last: center;
-  background-color: #FFF;
 }
