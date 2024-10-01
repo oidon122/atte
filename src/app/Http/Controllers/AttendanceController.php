@@ -11,9 +11,25 @@ class AttendanceController extends Controller
 {
     public function index ()
     {
-        $isWorking = Attendance::where('user_id', auth()->id())->whereNull('work_end')->exists();
+        $userId = auth()->id();
+        $today = Carbon::today()->toDateString();
 
-        return view('stamp', ['isWorking' => $isWorking]);
+        $attendance = Attendance::where('user_id', $userId)
+            ->where('date', $today)
+            ->first();
+
+        $isWorking = $attendance && is_null($attendance->work_end);
+        $hasCheckedOut = $attendance && !is_null($attendance->work_end);
+
+        $isResting = $attendance ? Rest::where('attendance_id' , $attendance->id)
+            ->whereNull('rest_end')
+            ->exists() : false;
+
+        return view('stamp', [
+            'isWorking' => $isWorking,
+            'hasCheckedOut' => $hasCheckedOut,
+            'isResting' => $isResting,
+        ]);
     }
 
     public function startWork ()
