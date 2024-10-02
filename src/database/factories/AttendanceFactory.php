@@ -23,11 +23,15 @@ class AttendanceFactory extends Factory
      */
     public function definition()
     {
+        $randomDate = Carbon::today()->subDays(rand(1,30));
+        $workStart = $randomDate->copy()->addHours(rand(6,16));
+        $workEnd = $workStart->copy()->addHours(rand(3,8));
+
         return [
             'user_id' => User::inRandomOrder()->first()->id,
-            'date' => $this->faker->date(),
-            'work_start' => $this->faker->date(),
-            'work_end' => $this->faker->date(),
+            'date' => $randomDate->toDateString(),
+            'work_start' => $workStart->toTimeString(),
+            'work_end' => $workEnd->toTimeString(),
         ];
     }
 }

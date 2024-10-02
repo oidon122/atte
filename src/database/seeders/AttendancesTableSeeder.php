@@ -3,19 +3,19 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Attendance;
 
-class DatabaseSeeder extends Seeder
+class AttendancesTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
-        $this->call(AttendancesTableSeeder::class);
+        User::factory()->count(30)->create();
     }
 }

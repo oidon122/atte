@@ -12,4 +12,6 @@ class Attendance extends Model
     protected $guarded = [
         'id',
     ];
+
+    protected $fillable = ['user_id', 'date', 'work_start', 'work_end'];
 }
