@@ -25,7 +25,7 @@ class AttendanceFactory extends Factory
     {
         $randomDate = Carbon::today()->subDays(rand(1,30));
         $workStart = $randomDate->copy()->addHours(rand(6,16));
-        $workEnd = $workStart->copy()->addHours(rand(3,8));
+        $workEnd = $workStart->copy()->addHours(rand(5,8));
 
         return [
             'user_id' => User::inRandomOrder()->first()->id,

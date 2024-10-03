@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Attendance;
+use App\Models\Rest;
 
-class AttendancesTableSeeder extends Seeder
+class RestsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class AttendancesTableSeeder extends Seeder
      */
     public function run()
     {
-        Attendance::factory()->count(50)->create();
+        Rest::factory()->count(30)->create();
     }
 }

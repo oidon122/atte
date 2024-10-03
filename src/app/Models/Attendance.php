@@ -13,5 +13,15 @@ class Attendance extends Model
         'id',
     ];
 
-    protected $fillable = ['user_id', 'date', 'work_start', 'work_end'];
+    protected $fillable = [
+        'user_id',
+        'date',
+        'work_start',
+        'work_end'
+    ];
+
+    public function rests()
+    {
+        return $this->hasMany(Rest::class);
+    }
 }
