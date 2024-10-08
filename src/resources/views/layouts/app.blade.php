@@ -16,15 +16,15 @@
         <ul class="header__nav">
           @if (Auth::check())
           <li class="header__nav-item">
-            <a class="header-nav__link" href="/work">ホーム</a>
+            <a class="header__nav-link" href="/work">ホーム</a>
           </li>
           <li class="header__nav-item">
-            <a class="header-nav__link" href="/attendance">日付一覧</a>
+            <a class="header__nav-link" href="/attendance">日付一覧</a>
           </li>
           <li class="header__nav-item">
             <form action="/logout" method="post">
               @csrf
-              <button class="header-nav__button">ログアウト</button>
+              <button class="header__nav-button">ログアウト</button>
             </form>
           </li>
           @endif

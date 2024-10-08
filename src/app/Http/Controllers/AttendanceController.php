@@ -88,4 +88,12 @@ class AttendanceController extends Controller
 
         return redirect('/work');
     }
+
+    public function getAttendance()
+    {
+        $date = Carbon::now()->toDateString();
+        $attendances = Attendance::whereDate('date', $date)->paginate(5);
+
+        return view('attendance', compact('attendances', 'date'));
+    }
 }
