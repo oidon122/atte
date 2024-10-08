@@ -20,7 +20,6 @@
 .date__the-day {
   margin: 0 40px;
   font-size: 18px;
-  font-weight: bold;
 }
 
 .attendance__table {
@@ -30,9 +29,9 @@
 
 .attendance__label, .attendance__data {
   border-top: 1px solid #ccc;
-  padding: 15px;
+  padding: 18px;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .attendance__label {
