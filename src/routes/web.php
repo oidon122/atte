@@ -19,7 +19,8 @@ Route::post('/logout', function () {
     return redirect('/login');
 })->name('logout');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('verified')->group(function () {
+    Route::get('/', function () { return redirect('/work');});
     Route::get('/work', [AttendanceController::class, 'index']);
     Route::post('/work/start', [AttendanceController::class,'startWork']);
     Route::post('/work/end', [AttendanceController::class, 'endWork']);
