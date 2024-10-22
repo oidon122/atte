@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Email Verification</h1>
+        <h1>メール認証</h1>
         <p>Please verify your email address by clicking the link we just sent to your inbox.</p>
         <p>If you didn’t receive the email, we will gladly send you another.</p>
 
@@ -14,12 +14,7 @@
 
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
-            <button type="submit">Resend Verification Email</button>
-        </form>
-
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit">Log Out</button>
+            <button type="submit">確認メール再送信</button>
         </form>
     </div>
 @endsection
