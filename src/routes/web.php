@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\UserListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,21 +17,17 @@ use App\Http\Controllers\AttendanceController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
 
-Route::get('/email/verify/{id}/{hash}', function(EmailVerificationRequest $request) {
-    $request->fulfill();
-    return redirect('/work');
-})->middleware(['auth', 'signed'])->name('verification.verify');
-
-Route::post('/email/verification-nontification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
-    return back()->with('message', 'Verification Link sent!');
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-Route::get('/profile', function () {})->middleware(['auth', 'verified']);
+Route::middleware('auth')->group(function () {
+    Route::prefix('email')->group(function () {
+        Route::get('/verify', [EmailVerificationController::class, 'show'])->name('verification.notice');
+        Route::get('/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
+            ->middleware('signed')->name('verification.verify');
+        Route::post('/verification-notification', [EmailVerificationController::class, 'resend'])
+            ->middleware('throttle:6,1')->name('verification.send');
+    });
+    Route::get('profile', function () {})->middleware('verified');
+});
 
 Route::post('/logout', function () {
     Auth::logout();
@@ -44,6 +42,10 @@ Route::middleware('verified')->group(function () {
 
     Route::post('/rest/start', [AttendanceController::class, 'startRest']);
     Route::post('/rest/end', [AttendanceController::class, 'endRest']);
+
     Route::get('/attendance', [AttendanceController::class, 'getAttendance']);
     Route::get('/select/date', [AttendanceController::class, 'selectDate']);
+
+    Route::get('/users', [UserListController::class, 'index']);
+    Route::get('/users/{id}/attendance', [UserListController::class, 'checkAttendance'])->name('user.attendance');
 });

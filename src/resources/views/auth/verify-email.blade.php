@@ -2,13 +2,12 @@
 
 @section('content')
     <div class="container">
-        <h1>メール認証</h1>
-        <p>Please verify your email address by clicking the link we just sent to your inbox.</p>
-        <p>If you didn’t receive the email, we will gladly send you another.</p>
+        <h1>メールを送信しました</h1>
+        <p>メール内リンクをクリックすると、アカウントが認証され、全ての機能をご利用いただけるようになります。</p>
 
         @if (session('status') == 'verification-link-sent')
             <div>
-                <p>A new verification link has been sent to the email address you provided during registration.</p>
+                <p>メールを受け取れなかった場合は、下のボタンから再送信をしてください。</p>
             </div>
         @endif
 
