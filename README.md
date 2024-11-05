@@ -32,6 +32,15 @@ DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
+
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=no-reply@example.com
+MAIL_FROM_NAME=atte
 ```
 
 5. アプリケーションキーの作成
@@ -54,9 +63,9 @@ php artisan db:seed
 
 ## 使用技術(実行環境)
 
--   PHP8.3.0
--   Laravel8.83.27
--   MySQL8.0.26
+- PHP8.3.0
+- Laravel8.83.27
+- MySQL8.0.26
 
 ## ER 図
 
@@ -64,5 +73,6 @@ php artisan db:seed
 
 ## URL
 
--   開発環境：http://localhost/
--   phpMyAdmin:：http://localhost:8080/
+- 開発環境：http://localhost/
+- phpMyAdmin：http://localhost:8080/
+- Mailhog：http://localhost:8025
