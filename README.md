@@ -1,5 +1,31 @@
 # Atte(勤怠記録システム)
 
+## 作成した目的
+
+人事評価のため
+
+## アプリケーションの URL
+
+## 機能一覧
+
+- ログイン機能
+- 勤怠登録機能
+- 勤怠確認機能
+
+## 使用技術(実行環境)
+
+- PHP8.3.0
+- Laravel8.83.27
+- MySQL8.0.26
+
+## テーブル設計図
+
+![alt](table.png)
+
+## ER 図
+
+![alt](atte.png)
+
 ## 環境構築
 
 **Docker ビルド**
@@ -60,16 +86,6 @@ php artisan migrate
 ```bash
 php artisan db:seed
 ```
-
-## 使用技術(実行環境)
-
-- PHP8.3.0
-- Laravel8.83.27
-- MySQL8.0.26
-
-## ER 図
-
-![alt](atte.png)
 
 ## URL
 
