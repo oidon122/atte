@@ -30,7 +30,7 @@
 
 **Docker セットアップ**
 
-1. `git clone github.com/oidon122/atte.git`
+1. `git clone git@github.com:oidon122/atte.git`
 2. DockerDesktop アプリを立ち上げる
 3. `docker-compose up -d --build`
 
